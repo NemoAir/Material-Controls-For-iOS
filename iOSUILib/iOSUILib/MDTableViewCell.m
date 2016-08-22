@@ -101,9 +101,9 @@
   [_mdLayer stopEffects];
 }
 
-- (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
+/* - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
   [super touchesMoved:touches withEvent:event];
   [_mdLayer stopEffects];
-}
+} */
 
 @end
