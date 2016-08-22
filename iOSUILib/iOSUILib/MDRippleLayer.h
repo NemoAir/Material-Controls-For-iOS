@@ -27,36 +27,40 @@ NS_ASSUME_NONNULL_BEGIN
 @interface MDRippleLayer : CALayer
 
 /*!
- * @brief enable ripple effect or not
+ * @brief enable ripple effect or not,default YES
  */
 @property(nonatomic) BOOL enableRipple;
 /*!
- * @brief enable elevation effect or not
+ * @brief enable elevation effect or not,default NO
  */
 @property(nonatomic) BOOL enableElevation;
 /*!
  * @brief change display area of the effects, if value is YES , effects will
- * only display the path inside superview's layer background bounds
+ * only display the path inside superview's layer background bounds,default NO
  */
 @property(nonatomic) BOOL enableMask;
 
 /*!
  * @brief Resting elevation value of the view in which this layer will be
- * added.
+ * added.default 2.0
  */
 @property(nonatomic) CGFloat restingElevation;
 
 /*!
  * @brief Scale ratio of the ripple effect, if it's value = 1, the ripple effect
- * will cover entire view's bounds
+ * will cover entire view's bounds,defalut 1
  */
 @property(nonatomic) CGFloat rippleScaleRatio;
 
 /*!
  * @brief Speed of the ripple effect, points per second
  */
-@property(nonatomic) CGFloat effectSpeed;
+//@property(nonatomic) CGFloat effectSpeed;
 
+/**
+ *  ripple animation time default 0.3s
+ */
+@property (nonatomic) CGFloat rippleTime;
 /*!
  * @brief Base color for effects. By default, ripple effect has the same color
  * as the effectColor with 50% alpha component, background color will have 30%

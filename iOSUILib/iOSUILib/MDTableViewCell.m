@@ -67,13 +67,13 @@
 
 - (void)initLayer {
   if (!_rippleColor)
-    _rippleColor = [UIColor colorWithWhite:0.5 alpha:1];
+      _rippleColor = [UIColor colorWithRed:244.0/255.0 green:244.0/255.0 blue:244.0/255.0 alpha:1.0];
 
-  _mdLayer = [[MDRippleLayer alloc] initWithSuperLayer:self.layer];
-  _mdLayer.effectColor = _rippleColor;
-  _mdLayer.rippleScaleRatio = 1;
-  _mdLayer.enableElevation = false;
-  _mdLayer.effectSpeed = 300;
+    self.selectionStyle = UITableViewCellSelectionStyleNone;
+    _mdLayer = [[MDRippleLayer alloc] initWithSuperLayer:self.layer];
+    [_mdLayer setEffectColor:_rippleColor withRippleAlpha:0.3 backgroundAlpha:0.0];
+    _mdLayer.rippleScaleRatio = 1;
+  
 }
 
 - (void)setFrame:(CGRect)frame {

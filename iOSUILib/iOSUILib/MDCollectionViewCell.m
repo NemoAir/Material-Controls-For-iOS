@@ -55,7 +55,7 @@
   mdLayer = [[MDRippleLayer alloc] initWithSuperLayer:self.layer];
   [mdLayer setEffectColor:_rippleColor];
   mdLayer.enableElevation = false;
-  mdLayer.effectSpeed = 300;
+  
 }
 
 - (void)setFrame:(CGRect)frame {
