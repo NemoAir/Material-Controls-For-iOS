@@ -68,9 +68,10 @@
 - (void)initLayer {
   if (!_rippleColor)
       _rippleColor = [UIColor colorWithRed:244.0/255.0 green:244.0/255.0 blue:244.0/255.0 alpha:1.0];
-
+    _rippleTime = 0.3;
     self.selectionStyle = UITableViewCellSelectionStyleNone;
     _mdLayer = [[MDRippleLayer alloc] initWithSuperLayer:self.layer];
+    _mdLayer.rippleTime = _rippleTime;
     [_mdLayer setEffectColor:_rippleColor withRippleAlpha:0.3 backgroundAlpha:0.0];
     _mdLayer.rippleScaleRatio = 1;
   
@@ -79,10 +80,13 @@
 - (void)setFrame:(CGRect)frame {
   [super setFrame:frame];
 }
-
+-(void)setRippleTime:(CGFloat)rippleTime{
+    _rippleTime = rippleTime;
+    _mdLayer.rippleTime = rippleTime;
+}
 - (void)setRippleColor:(UIColor *)rippleColor {
   _rippleColor = rippleColor;
-  [_mdLayer setEffectColor:rippleColor];
+    [_mdLayer setEffectColor:_rippleColor withRippleAlpha:0.3 backgroundAlpha:0.0];
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {

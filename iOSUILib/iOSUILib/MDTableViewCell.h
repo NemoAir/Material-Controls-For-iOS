@@ -26,5 +26,9 @@ IB_DESIGNABLE
 @interface MDTableViewCell : UITableViewCell
 
 @property(nonatomic) IBInspectable UIColor *rippleColor;
+/**
+ *  default 0.3s
+ */
+@property (nonatomic, assign) CGFloat rippleTime;
 
 @end
